@@ -37,3 +37,7 @@ The local preview initially loaded the main pack directly. The final launcher wa
 - Browser automation blocked direct `file://` navigation, so opening the downloadable HTML by double-click was not visually tested. The HTTP-origin standalone launcher and its remote dependency path were tested.
 - Computer Use subsequently stopped because it could not determine the current Windows browser URL with sufficient confidence. The final visual Resume check for the two-SMG/8-material checkpoint and a foreground fullscreen-button click could not be completed in this turn. Save-file reload itself was observed in browser logs.
 - No full 20-wave completion, late-game boss run, controller hardware test, or second-browser/device compatibility claim is made.
+
+## Bare launcher update
+
+The current launcher has an empty initial document title, a gray background, and one gray loading bar. It starts Godot automatically after verification and initialization. The launcher has no visible text or buttons; its canvas still fills the viewport. Audio resumes on the first keyboard/pointer interaction if the browser initially suspends it. Asset pins, game bytes, chunk hashes, and save storage paths are unchanged. The revised entry point passed JavaScript syntax and markup checks; the browser session had already stopped, so this appearance/automatic-start revision was not visually retested. The gameplay observations above describe the preceding entry-point presentation using the same runtime and game assets.

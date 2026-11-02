@@ -4,41 +4,31 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
   <meta name="color-scheme" content="dark">
-  <title>Brotato · Primal Dread</title>
+  <title></title>
   <style>
-    *{box-sizing:border-box}html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#1c1c1c;color:#f9f7ee;font:16px system-ui,sans-serif}
+    *{box-sizing:border-box}html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#808080}
     canvas{display:block;width:100vw;height:100dvh;outline:none;touch-action:none}
-    #loading{position:fixed;inset:0;display:grid;place-items:center;background:#1c1c1c;z-index:2;padding:24px}
-    #loading[hidden]{display:none}.panel{width:min(420px,100%);text-align:center}h1{font-size:48px;letter-spacing:-2px;margin:0 0 8px}
-    .dlc{color:#c4c6b9;margin:0 0 32px}progress{display:block;width:100%;height:8px;border:0;border-radius:8px;overflow:hidden;background:#36392f;accent-color:#b5d76a}
-    progress::-webkit-progress-bar{background:#36392f}progress::-webkit-progress-value{background:#b5d76a}#status{min-height:44px;margin:16px 0;color:#d5d8cb;line-height:1.5;overflow-wrap:anywhere}
-    button{font:600 17px system-ui;border:1px solid #69764c;border-radius:8px;background:#b5d76a;color:#17200c;padding:12px 25px;cursor:pointer}button:disabled{opacity:.4;cursor:wait}
-    #fullscreen{position:fixed;top:10px;right:10px;z-index:1;padding:7px 11px;background:#111a;color:#eee;border:1px solid #fff4;font-size:17px;opacity:.25}#fullscreen:hover,#fullscreen:focus-visible{opacity:1}
-    :fullscreen #fullscreen{opacity:0}:fullscreen #fullscreen:hover,:fullscreen #fullscreen:focus-visible{opacity:1}
-    .hint{font-size:13px;color:#8e9384;margin-top:22px}
+    #loading{position:fixed;inset:0;display:grid;place-items:center;background:#808080;z-index:2}
+    #loading[hidden]{display:none}
+    progress{appearance:none;display:block;width:min(320px,65vw);height:8px;border:0;border-radius:0;overflow:hidden;background:#616161;accent-color:#d9d9d9}
+    progress::-webkit-progress-bar{background:#616161}progress::-webkit-progress-value{background:#d9d9d9}
+    progress::-moz-progress-bar{background:#d9d9d9}
   </style>
 </head>
 <body>
   <canvas id="canvas" tabindex="0" aria-label="Brotato game"></canvas>
-  <button id="fullscreen" type="button" title="Toggle fullscreen" aria-label="Toggle fullscreen">⛶</button>
-  <main id="loading"><div class="panel">
-    <h1>BROTATO</h1><p class="dlc">Primal Dread · Abyssal Terrors</p>
+  <main id="loading">
     <progress id="progress" max="1" value="0" aria-label="Download progress"></progress>
-    <p id="status" role="status" aria-live="polite">Loading game files…</p>
-    <button id="play" type="button" disabled>Play</button>
-    <p class="hint">WASD / arrows to move · Esc to pause<br>Saves stay in this browser.</p>
-  </div></main>
+  </main>
 <script>
 'use strict';
 const BASE = 'https://cdn.jsdelivr.net/gh/bitball41/potato-primal-dread@c6abb85825660f426aa791f40135c635cca56701/';
 const BUILD = {"schema":1,"engine":"Godot 3.7 dev1 a117d512b","game":"Brotato 1.2.0.0","chunkSize":19000000,"files":{"game.pck":{"bytes":281347063,"sha256":"52b22324abe25142f56557e644e4505ed3e0050023dbf13b66319b2416157498","chunks":[{"path":"assets/game.pck.part001","bytes":19000000,"sha256":"7edba6a277e8c97e15d5a48f019925d6c3f6d8b7f35d36ee3735848c5d5fd548"},{"path":"assets/game.pck.part002","bytes":19000000,"sha256":"a1eb13e0dbad6c59b346c0f84b46991c07db7486c483c9cfd7818c83bb67fcc0"},{"path":"assets/game.pck.part003","bytes":19000000,"sha256":"6c77da467d1d3b5953cd5af33455301f81e8c7e042fb6439d52ba7df617f00c9"},{"path":"assets/game.pck.part004","bytes":19000000,"sha256":"8d6f7a9b9e5afa323edd2925f5a144ca2d540232ddee7c3485e3d954bcfefcdd"},{"path":"assets/game.pck.part005","bytes":19000000,"sha256":"2fc0f9e9f8dc207ad67e4840579d87a85d32932bd6030c5ded6f94c9fe561b08"},{"path":"assets/game.pck.part006","bytes":19000000,"sha256":"1328faae1ec3b5e8da33249c5bfd8d6802401a671c5a31d0869e059634cbff3f"},{"path":"assets/game.pck.part007","bytes":19000000,"sha256":"0e3d3a94e413bf69bf8065163ad48ae887b9a1e26d8a482192a91151456d73f9"},{"path":"assets/game.pck.part008","bytes":19000000,"sha256":"2c342477a3698d8684eef270ee2d68fef147d72ffc68938fb5c0abe7425e5ec4"},{"path":"assets/game.pck.part009","bytes":19000000,"sha256":"288a4ff153403aaff1750ff4d7495516e0151238b2655671be64ffb5c97d248e"},{"path":"assets/game.pck.part010","bytes":19000000,"sha256":"d3525f53b1104ba058b86177883cc7f670d93d6451bd6865aee4b5d26042af4d"},{"path":"assets/game.pck.part011","bytes":19000000,"sha256":"52a0e96bb06820893bb8cb251e93310d6343941c823813912c61bc62edaf7f0c"},{"path":"assets/game.pck.part012","bytes":19000000,"sha256":"d8d71ccd9f20ceec4684d09d7936a0f9f941334fe4e1b6de6c706dccfbcdd3a6"},{"path":"assets/game.pck.part013","bytes":19000000,"sha256":"ba4389d6cfc24936ad501a1e699166c7b4d33b137d45af38a9d799e9bd48f5c9"},{"path":"assets/game.pck.part014","bytes":19000000,"sha256":"0bb9cb4e012de6adbc3ab9507b87fe4f900a22c38ee0f43c09fd936f6335e85b"},{"path":"assets/game.pck.part015","bytes":15347063,"sha256":"8305aeff54a655522ae5c321dc78ad6080631f1f54327ba2a19c758ca7f15576"}]},"game.wasm":{"bytes":20112283,"sha256":"fcb37d18e3bdab7ef845cc580a01ff6b6d5dec4cb75fc20d16db21f1f855bd43","chunks":[{"path":"assets/game.wasm.part001","bytes":19000000,"sha256":"c61162b4a1c2b0c2e911a7b10496ee82574e7a9fe635c367ebdb572837cdd75c"},{"path":"assets/game.wasm.part002","bytes":1112283,"sha256":"713e948f7f557a5253003256f2a62cd446d54ae9e34b9c70488cc6e36a0c023f"}]}},"runtime.js":{"bytes":338241,"sha256":"37f39e314ab522c2984d87e4898fb3e9bb366ee8d9eb5ca98f27b4411775f9eb"},"game.audio.worklet.js":{"bytes":7153,"sha256":"8b3e52c1f0806bc623f174cfa2989ba1d6f63e44022d7923580579a1b88cab37"}};
 const canvas = document.getElementById('canvas');
 const loading = document.getElementById('loading');
-const status = document.getElementById('status');
 const progress = document.getElementById('progress');
-const play = document.getElementById('play');
 const qa = location.search.includes('qa=1');
-let engine, cache, starting = false, loadedBytes = 0;
+let engine, cache, loadedBytes = 0;
 const received = new Map();
 const totalBytes = Object.values(BUILD.files).reduce((sum,file)=>sum+file.bytes,0);
 const hex = buffer => Array.from(new Uint8Array(buffer),v=>v.toString(16).padStart(2,'0')).join('');
@@ -46,7 +36,6 @@ async function sha256(data){return hex(await crypto.subtle.digest('SHA-256',data
 function updateProgress(path,n){
   loadedBytes += n - (received.get(path)||0); received.set(path,n);
   progress.value = Math.min(1,loadedBytes/totalBytes);
-  status.textContent = `Loading game files… ${Math.floor(progress.value*100)}% · ${Math.round(loadedBytes/1e6)} / ${Math.round(totalBytes/1e6)} MB`;
 }
 async function fetchChunk(part){
   const url = BASE+part.path;
@@ -90,7 +79,6 @@ async function reassemble(){
     while(next<jobs.length){const job=jobs[next++];const bytes=await fetchChunk(job.part);files[job.name].set(bytes,job.offset);}
   }
   await Promise.all(Array.from({length:4},worker));
-  status.textContent='Checking game files…';
   for(const [name,file]of Object.entries(BUILD.files)){
     if(await sha256(files[name])!==file.sha256)throw new Error(`Reassembled file verification failed: ${name}`);
     console.log('BUILD_VERIFIED',name,file.bytes,file.sha256);
@@ -111,46 +99,37 @@ async function syncSaves(){
   const error=await engine.rtenv.syncFS();
   if(error)console.error('SAVE_SYNC_FAILED',error);
 }
-async function fullscreen(){
-  try{if(document.fullscreenElement)await document.exitFullscreen();else await document.documentElement.requestFullscreen();}catch(error){console.warn('FULLSCREEN_REQUEST_FAILED',error.message);}
-  canvas.focus();
-}
-document.getElementById('fullscreen').addEventListener('click',fullscreen);
-document.addEventListener('fullscreenchange',()=>{canvas.dataset.fullscreen=String(!!document.fullscreenElement);console.log('FULLSCREEN_STATE',!!document.fullscreenElement);});
 document.addEventListener('visibilitychange',()=>{if(document.hidden)syncSaves();});
 window.addEventListener('pagehide',syncSaves);
 canvas.addEventListener('contextmenu',event=>event.preventDefault());
-if(qa){
-  const NativeAudioContext=window.AudioContext;
-  window.AudioContext=class extends NativeAudioContext{constructor(...args){super(...args);this.addEventListener('statechange',()=>console.log('BROWSER_AUDIO_STATE',this.state));}};
+const audioContexts=new Set();
+const NativeAudioContext=window.AudioContext||window.webkitAudioContext;
+if(NativeAudioContext){
+  window.AudioContext=class extends NativeAudioContext{constructor(...args){super(...args);audioContexts.add(this);if(qa)this.addEventListener('statechange',()=>console.log('BROWSER_AUDIO_STATE',this.state));}};
 }
+function resumeAudio(){for(const context of audioContexts){if(context.state==='suspended')context.resume().catch(error=>console.warn('AUDIO_RESUME_FAILED',error));}}
+document.addEventListener('pointerdown',resumeAudio,{capture:true,passive:true});
+document.addEventListener('keydown',resumeAudio,{capture:true});
 async function prepare(){
   if(!crypto.subtle)throw new Error('This browser needs HTTPS or a locally opened launcher.');
   if(!window.WebAssembly)throw new Error('This browser does not support WebAssembly.');
   try{cache=await caches.open('brotato-primal-dread-v1');}catch{cache=null;}
   const [files]=await Promise.all([reassemble(),loadRuntime()]);
   window.BROTATO_AUDIO_WORKLET_URL=BASE+'game.audio.worklet.js';
-  status.textContent='Starting Godot…';
   engine=new Engine({canvas,executable:'game',canvasResizePolicy:2,persistentPaths:['/userfs'],
     onPrint:(...args)=>{console.log(...args);if(args.join(' ').includes('Writing save to main'))setTimeout(syncSaves,250);},
     onPrintError:(...args)=>console.error(...args),
-    onExit:()=>{loading.hidden=false;status.textContent='Game closed.';play.textContent='Play again';play.disabled=false;play.onclick=()=>location.reload();}
+    onExit:()=>{loading.hidden=false;progress.value=0;console.log('BROTATO_CLOSED');}
   });
   await Engine.load(files['game.wasm']);
   await engine.init();
   engine.copyToFS('game.pck',files['game.pck']);
   files['game.pck']=null;files['game.wasm']=null;
-  status.textContent='Ready to play';play.disabled=false;play.focus();
-  play.onclick=async()=>{
-    if(starting)return;starting=true;play.disabled=true;status.textContent='Starting Brotato…';
-    try{
-      await engine.start({args:['--main-pack','game.pck']});
-      loading.hidden=true;canvas.focus();setInterval(syncSaves,1000);
-      console.log('BROTATO_STARTED',BUILD.game,BUILD.engine);
-    }catch(error){fail(error);}
-  };
+  await engine.start({args:['--main-pack','game.pck']});
+  loading.hidden=true;canvas.focus();setInterval(syncSaves,1000);
+  console.log('BROTATO_STARTED',BUILD.game,BUILD.engine);
 }
-function fail(error){console.error(error);loading.hidden=false;status.textContent=error.message||String(error);play.disabled=false;play.textContent='Retry';play.onclick=()=>location.reload();}
+function fail(error){console.error(error);loading.hidden=false;progress.value=0;progress.setAttribute('aria-label','Could not load the game. Reload to retry.');progress.dataset.error=error.message||String(error);}
 prepare().catch(fail);
 </script>
 </body></html>
