@@ -1,0 +1,113 @@
+{
+  "schema": 1,
+  "engine": "Godot 3.7 dev1 a117d512b",
+  "game": "Brotato 1.2.0.0",
+  "chunkSize": 19000000,
+  "files": {
+    "game.pck": {
+      "bytes": 281347063,
+      "sha256": "52b22324abe25142f56557e644e4505ed3e0050023dbf13b66319b2416157498",
+      "chunks": [
+        {
+          "path": "assets/game.pck.part001",
+          "bytes": 19000000,
+          "sha256": "7edba6a277e8c97e15d5a48f019925d6c3f6d8b7f35d36ee3735848c5d5fd548"
+        },
+        {
+          "path": "assets/game.pck.part002",
+          "bytes": 19000000,
+          "sha256": "a1eb13e0dbad6c59b346c0f84b46991c07db7486c483c9cfd7818c83bb67fcc0"
+        },
+        {
+          "path": "assets/game.pck.part003",
+          "bytes": 19000000,
+          "sha256": "6c77da467d1d3b5953cd5af33455301f81e8c7e042fb6439d52ba7df617f00c9"
+        },
+        {
+          "path": "assets/game.pck.part004",
+          "bytes": 19000000,
+          "sha256": "8d6f7a9b9e5afa323edd2925f5a144ca2d540232ddee7c3485e3d954bcfefcdd"
+        },
+        {
+          "path": "assets/game.pck.part005",
+          "bytes": 19000000,
+          "sha256": "2fc0f9e9f8dc207ad67e4840579d87a85d32932bd6030c5ded6f94c9fe561b08"
+        },
+        {
+          "path": "assets/game.pck.part006",
+          "bytes": 19000000,
+          "sha256": "1328faae1ec3b5e8da33249c5bfd8d6802401a671c5a31d0869e059634cbff3f"
+        },
+        {
+          "path": "assets/game.pck.part007",
+          "bytes": 19000000,
+          "sha256": "0e3d3a94e413bf69bf8065163ad48ae887b9a1e26d8a482192a91151456d73f9"
+        },
+        {
+          "path": "assets/game.pck.part008",
+          "bytes": 19000000,
+          "sha256": "2c342477a3698d8684eef270ee2d68fef147d72ffc68938fb5c0abe7425e5ec4"
+        },
+        {
+          "path": "assets/game.pck.part009",
+          "bytes": 19000000,
+          "sha256": "288a4ff153403aaff1750ff4d7495516e0151238b2655671be64ffb5c97d248e"
+        },
+        {
+          "path": "assets/game.pck.part010",
+          "bytes": 19000000,
+          "sha256": "d3525f53b1104ba058b86177883cc7f670d93d6451bd6865aee4b5d26042af4d"
+        },
+        {
+          "path": "assets/game.pck.part011",
+          "bytes": 19000000,
+          "sha256": "52a0e96bb06820893bb8cb251e93310d6343941c823813912c61bc62edaf7f0c"
+        },
+        {
+          "path": "assets/game.pck.part012",
+          "bytes": 19000000,
+          "sha256": "d8d71ccd9f20ceec4684d09d7936a0f9f941334fe4e1b6de6c706dccfbcdd3a6"
+        },
+        {
+          "path": "assets/game.pck.part013",
+          "bytes": 19000000,
+          "sha256": "ba4389d6cfc24936ad501a1e699166c7b4d33b137d45af38a9d799e9bd48f5c9"
+        },
+        {
+          "path": "assets/game.pck.part014",
+          "bytes": 19000000,
+          "sha256": "0bb9cb4e012de6adbc3ab9507b87fe4f900a22c38ee0f43c09fd936f6335e85b"
+        },
+        {
+          "path": "assets/game.pck.part015",
+          "bytes": 15347063,
+          "sha256": "8305aeff54a655522ae5c321dc78ad6080631f1f54327ba2a19c758ca7f15576"
+        }
+      ]
+    },
+    "game.wasm": {
+      "bytes": 20112283,
+      "sha256": "fcb37d18e3bdab7ef845cc580a01ff6b6d5dec4cb75fc20d16db21f1f855bd43",
+      "chunks": [
+        {
+          "path": "assets/game.wasm.part001",
+          "bytes": 19000000,
+          "sha256": "c61162b4a1c2b0c2e911a7b10496ee82574e7a9fe635c367ebdb572837cdd75c"
+        },
+        {
+          "path": "assets/game.wasm.part002",
+          "bytes": 1112283,
+          "sha256": "713e948f7f557a5253003256f2a62cd446d54ae9e34b9c70488cc6e36a0c023f"
+        }
+      ]
+    }
+  },
+  "runtime.js": {
+    "bytes": 338241,
+    "sha256": "37f39e314ab522c2984d87e4898fb3e9bb366ee8d9eb5ca98f27b4411775f9eb"
+  },
+  "game.audio.worklet.js": {
+    "bytes": 7153,
+    "sha256": "8b3e52c1f0806bc623f174cfa2989ba1d6f63e44022d7923580579a1b88cab37"
+  }
+}
